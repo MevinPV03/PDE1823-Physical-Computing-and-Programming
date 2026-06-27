@@ -1,0 +1,34 @@
+Experiment 2: Distance-Based Servo Motor Control
+
+Description:
+This experiment combines an HC-SR04 ultrasonic sensor with an SG90 servo motor.
+The ultrasonic sensor continuously measures the distance between the sensor and an object.
+Based on the measured distance, the Arduino adjusts the angle of the servo motor to predefined positions.
+
+Components Used:
+-Arduino Uno
+-HC-SR04 Ultrasonic Sensor
+-SG90 Servo Motor
+-Breadboard
+-Jumper Wires
+
+Code Logic:
+The ultrasonic sensor calculates the distance in centimeters and the servo motor
+rotates according to the following conditions:
+
+-Distance > 20 cm → Servo moves to 180°
+-Distance between 10 cm and 20 cm → Servo moves to 90°
+-Distance < 10 cm → Servo moves to 0°
+
+Features:
+-Real-time distance measurement.
+-Automatic servo positioning based on proximity.
+-Demonstrates sensor-to-actuator communication.
+-Useful as a basic automated gate or positioning system.
+
+Real-Life Applications:
+-Automatic gates and barriers that open or close depending on the presence of a vehicle.
+-Smart parking systems that use sensors to detect approaching cars and move gate mechanisms.
+-Industrial automation for positioning robotic arms or conveyor mechanisms.
+-Touchless dispenser systems where a servo motor controls the release mechanism when a user's hand is detected.
+-Smart waste bins that automatically open their lids when someone approaches.

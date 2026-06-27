@@ -1,0 +1,1 @@
+This series of experiments progressively demonstrates the integration of sensing, actuation, visual indicators, and alarm systems using Arduino. Beginning with basic distance measurement and ending with a complete warning system, the projects showcase fundamental concepts used in modern automation, robotics, smart homes, industrial control systems, and safety applications.

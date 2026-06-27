@@ -1,0 +1,51 @@
+Experiment 3: Distance-Based RGB LED and Servo Control
+
+Description
+This experiment extends the previous project by adding an RGB LED to provide visual feedback on the measured distance.
+The servo motor continues to change position according to the object's proximity, while the RGB LED changes colour
+to indicate safe, warning, and critical distance zones.
+
+Components Used:
+-Arduino Uno
+-HC-SR04 Ultrasonic Sensor
+-SG90 Servo Motor
+-RGB LED
+-220 Ω Resistors
+-Breadboard
+-Jumper Wires
+
+Code Logic:
+
+-Green Zone (Safe Distance)
+When the object is far from the sensor:
+
+Distance > 30 cm
+RGB LED = Green
+Servo angle = 180°
+
+-Yellow Zone (Warning Distance)
+When the object moves closer:
+
+Distance between 15 cm and 30 cm
+RGB LED = Yellow
+Servo angle = 90°
+
+-Red Zone (Critical Distance)
+When the object is very close:
+
+Distance < 15 cm
+RGB LED = Red
+Servo angle = 0°
+
+Features:
+-Visual indication of object distance.
+-Servo motor reacts to object proximity.
+-Colour-coded distance monitoring system.
+-Simple introduction to smart sensing applications.
+
+Real-Life Applications:
+-Parking assistance systems where coloured indicators guide drivers while reversing.
+-Warehouse safety zones showing safe and dangerous distances around equipment.
+-Industrial monitoring systems providing visual alerts when people approach hazardous machinery.
+-Interactive exhibitions and installations where colours change based on visitor proximity.
+-Smart home automation systems that indicate occupancy or proximity status.

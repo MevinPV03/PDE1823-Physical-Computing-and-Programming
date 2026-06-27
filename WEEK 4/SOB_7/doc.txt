@@ -1,0 +1,21 @@
+SOB 7: Implement and maintain a project repository for code and documentation
+(GitHub)
+
+Why 
+Version control, also known as source control, is the practice of tracking and managing
+changes to software code. Version control systems are software tools that help software
+teams manage changes to source code over time. One of the most popular systems for
+version control is Git. It allows users to update and modify code while keeping track of the
+files and all changes that have been made to them. GitHub is an online hosting service that
+provides the same distributed version control and management functionality of Git, plus its
+own features.
+
+What
+To demonstrate your proficiency with Git, you will need to create your own repository on
+GitHub, upload, and update code on it. Any time you update the code or make any changes
+to it, commit and upload them online.
+How
+Register an account on GitHub and create a repository for your first mini project. Upload the
+code you have so far, whenever you make significant changes to it, make a commit to the
+repository with an appropriate message. Add a readme file to the repository. In order to have
+this sob marked, you must have at least two successful commits to the repository.

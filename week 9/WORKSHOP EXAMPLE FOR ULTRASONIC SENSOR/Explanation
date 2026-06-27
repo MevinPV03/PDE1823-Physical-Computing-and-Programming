@@ -1,0 +1,15 @@
+Experiment 1: Distance Measurement Using HC-SR04 Ultrasonic Sensor
+
+Description:
+This project demonstrates the use of the HC-SR04 ultrasonic sensor with an Arduino Uno to measure the distance between the sensor and an object. The sensor emits ultrasonic waves and calculates the distance based on the time taken for the echo signal to return. The measured distance is displayed in centimeters on the Serial Monitor.
+
+Components Used:
+1. Arduino Uno
+2. HC-SR04 Ultrasonic Sensor
+3. Breadboard
+4. Jumper Wires
+
+Features:
+-Real-time distance measurement
+-Distance output displayed in Serial Monitor
+-Simple introduction to ultrasonic sensing

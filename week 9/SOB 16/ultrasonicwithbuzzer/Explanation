@@ -1,0 +1,55 @@
+Experiment 4: Distance Monitoring System with RGB LED, Servo Motor and Buzzer
+
+Description:
+This experiment combines an ultrasonic sensor, servo motor, RGB LED and buzzer to create a complete proximity monitoring
+ and warning system.
+
+The RGB LED provides visual feedback, the servo motor responds mechanically to distance changes,
+ and the buzzer activates when an object enters a critical distance range.
+
+Code Logic:
+
+-Safe Zone
+
+Distance > 30 cm
+RGB LED = Green
+Servo = 180°
+Buzzer = OFF
+
+-Warning Zone
+
+Distance between 15 cm and 30 cm
+RGB LED = Yellow
+Servo = 90°
+Buzzer = OFF
+
+-Critical Zone
+
+Distance < 15 cm
+RGB LED = Red
+Servo = 0°
+Buzzer = ON
+
+Features:
+
+-Real-time distance measurement
+-Visual warning through RGB LED
+-Audible warning through buzzer
+-Mechanical response through servo motor
+-Multi-device integration using a single sensor
+
+Real-Life Applications:
+
+-Obstacle detection systems in robotics and autonomous vehicles.
+-Collision warning systems in parking and vehicle assistance applications.
+-Restricted area monitoring where an alarm is triggered if someone comes too close.
+-Security systems that provide visual and audible alerts when movement is detected.
+-Industrial safety systems that warn operators before entering hazardous zones.
+-Smart manufacturing environments where machines can react to worker proximity.
+-Assistive technology for visually impaired individuals, using sound alerts when obstacles are nearby.
+
+Project Outcome:
+This final experiment demonstrates how a single sensor can control multiple output devices simultaneously.
+The system provides mechanical, visual, and audible feedback based on object proximity,
+ making it a practical introduction to embedded systems, automation, smart sensing,
+  and safety monitoring applications.

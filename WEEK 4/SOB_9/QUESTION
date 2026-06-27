@@ -1,0 +1,5 @@
+SOB 9:
+Write code that makes use of a library or external module to carry out specialized tasks.
+Describe how the interpreter/compiler 'imports'.
+Submit a piece of code that imports a library and uses a function from it to help solve a particular task.
+Include a comment that explains how the library/module is understood by the compiler or interpreter.
