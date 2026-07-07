@@ -1,0 +1,12 @@
+Analog Input + Digital Output
+In class activity (SOB 15 - Threshold)
+ Use circuit you created in previous slide, no physical changes needed.
+ Create a sketch code that will turn on the LED only when the LDR is fully covered
+(tips: use conditional functionality).
+
+Optional:
+• Add an active buzzer on any digital pin on your Arduino
+(buzzer does not need resistor, just be aware of the
+polarity)
+• Modify the code so the buzzer will sound when the LDR
+is exposed to torch.

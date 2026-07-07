@@ -1,0 +1,40 @@
+SOB 19 - Basic Circuits Used with Microcontrollers
+
+This document describes pull-up resistors, pull-down resistors,
+ voltage divider circuits and transistor-controlled motor circuits used with
+ microcontrollers.
+
+Pull-Up Resistor
+
+Circuit: 5V -> 10kΩ resistor -> Input Pin;
+Push button between Input Pin and GND.
+The resistor keeps the input HIGH when the button is not pressed.
+Pressing the button connects the pin to GND, making the input LOW.
+
+Pull-Down Resistor
+
+Circuit: Input Pin -> 10kΩ resistor -> GND;
+Push button between Input Pin and 5V.
+The resistor keeps the input LOW when the button is not pressed.
+Pressing the button applies 5V, making the input HIGH.
+
+Voltage Divider
+
+Two resistors are connected in series between 5V and GND.
+The output voltage is taken from the midpoint and read by an analogue input.
+This allows sensors such as LDRs or thermistors to produce a variable voltage.
+
+Motor Control Using Transistor
+
+A DC motor is powered from an external supply.
+An NPN transistor acts as a switch controlled by a microcontroller pin through a resistor.
+A flyback diode is placed across the motor to protect the circuit from back EMF.
+
+Interaction with the Microcontroller
+
+Input circuits such as pull-up, pull-down and voltage divider networks provide
+reliable voltage levels that can be read by digital or analogue pins.
+
+Output circuits using transistors or relays allow the microcontroller to safely
+control devices that require more current than the microcontroller can supply
+directly.

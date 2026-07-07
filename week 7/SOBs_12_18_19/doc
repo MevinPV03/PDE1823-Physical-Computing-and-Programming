@@ -1,0 +1,19 @@
+a. Scenario-1: LED must be ON when the button is not pressed and should be
+OFF when the button is pressed.
+b. Scenario-2: LED must be ON when the button is pressed and stay ON for 3
+seconds even when the button is released, after that the LED should be
+OFF.
+c. Scenario-3: Press the button to turn ON the LED and press it again to turn
+OFF the LED (toggle).
+
+Add one more button connected to Pin 3, use Pull Up or Pull
+Down resistor if necessary. And remember to initialize it in your
+code. We call this as Button2 and the previous one as Button1.
+ Add one external LED on the breadboard
+ Create a code that will do the following:
+ Scenario-4: When Button1 is pressed, all LED will be ON and it should stay ON when
+Button1 is released. When Button2 is pressed and released, all LED should be OFF.
+ Scenario-5: When Button1 is pressed, Internal LED will be ON, ext LED will be OFF, it
+should stay that way even after Button1 is released. When Button 2 is pressed, ext LED
+will be ON and int LED will be OFF, it should stay that way even after Button1 is
+released.

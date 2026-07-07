@@ -1,0 +1,33 @@
+SOB 12 - Microcontroller Behaviour and Data Processing
+
+Objective: Upload a program to an Arduino and describe how the microcontroller processes data
+and how the physical device behaves.
+
+Program Used
+
+An Arduino program was uploaded to control an LED using PWM (Pulse Width Modulation).
+The LED gradually increased and decreased in brightness.
+
+How the Microcontroller Processes Data
+
+When powered on, the Arduino executes the setup function once and configures the LED pin as an output.
+The loop function then runs continuously. Brightness values between 0 and 255 are processed by the microcontroller
+and sent to the LED using PWM, controlling the amount of power delivered to the LED.
+
+Observed Physical Behaviour
+
+After uploading the program, the LED started in the OFF state.
+It gradually became brighter until it reached maximum brightness and then gradually became dimmer until it turned OFF again.
+This process repeated continuously.
+
+Comparison of Expected and Actual Behaviour
+
+Expected Behaviour             | Actual Behaviour
+
+LED fades on and off smoothly. | LED faded on and off smoothly.
+
+Conclusion
+
+The microcontroller successfully processed brightness values and controlled the LED as expected.
+The observed physical behaviour matched the intended behaviour of the program,
+confirming that the code was uploaded correctly and the device operated as designed.
