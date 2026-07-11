@@ -1,0 +1,112 @@
+Experiment Title
+
+Controlling a Stepper Motor Using Arduino MKR WiFi 1010, ULN2003 Driver,
+and Blynk IoT
+
+Components Used
+
+1. Arduino MKR WiFi 1010
+
+The Arduino MKR WiFi 1010 is a microcontroller board with built-in Wi-Fi capability.
+ It acts as the main controller in this experiment, receiving commands from the
+  Blynk application and controlling the stepper motor accordingly.
+
+2. Stepper Motor (28BYJ-48)
+
+The 28BYJ-48 is a low-cost stepper motor that rotates in precise steps rather than
+ continuously. This allows accurate control of the motor's position and direction.
+  In this experiment, the motor rotates clockwise or counter-clockwise based on
+  commands received from the Blynk app.
+
+3. ULN2003 Motor Driver
+
+The ULN2003 driver module is used to interface the stepper motor with the Arduino.
+ Since the Arduino cannot supply enough current to drive the motor directly,
+  the ULN2003 acts as a current amplifier and switching circuit, enabling safe and
+   reliable motor operation.
+
+4. Blynk IoT Application
+
+Blynk is a cloud-based IoT platform that allows users to remotely control hardware
+ using a smartphone. In this experiment, two buttons were created in the Blynk app
+  to control the rotation direction of the stepper motor.
+
+5. Wi-Fi Network
+
+The Wi-Fi network provides internet access for communication between the Arduino
+ MKR WiFi 1010 and the Blynk cloud server. This allows the motor to be controlled
+  remotely through the mobile application.
+
+6. WiFiNINA Library
+
+The WiFiNINA library enables the MKR WiFi 1010 to connect to wireless networks
+ and communicate over the internet.
+
+7. BlynkSimpleWiFiNINA Library
+
+This library allows communication between the MKR WiFi 1010 and the Blynk platform,
+ making it possible to receive commands from the mobile application.
+
+8. Stepper Library
+
+The Stepper library provides functions for controlling stepper motors.
+ It simplifies motor control by allowing the user to define the motor speed
+  and the number of steps to rotate.
+
+9. Blynk Buttons (Virtual Pins V0 and V1)
+
+Two button widgets were used in the Blynk application:
+
+V0: Rotates the motor clockwise.
+V1: Rotates the motor counter-clockwise.
+
+What the Experiment Did
+
+The experiment demonstrated the remote control of a stepper motor using the
+ Arduino MKR WiFi 1010 and the Blynk IoT platform.
+
+The MKR WiFi 1010 connected to a Wi-Fi network and established communication with
+ the Blynk cloud server using an authentication token. Two buttons were configured
+  in the Blynk application using Virtual Pins V0 and V1.
+
+When the user pressed the V0 button, the BLYNK_WRITE(V0) function was triggered,
+ causing the stepper motor to rotate 512 steps clockwise. When the V1 button was
+  pressed, the BLYNK_WRITE(V1) function executed and rotated the motor 512 steps
+   counter-clockwise.
+
+The motor speed was set to 10 RPM using the motor.setSpeed(10) command.
+ Through the Blynk app, users could remotely control the direction of the stepper
+  motor from anywhere with an internet connection.
+
+Importance of the Experiment
+
+This experiment is important because it demonstrates how IoT technology can be used
+ to remotely control electromechanical devices.
+
+The experiment helped in understanding:
+
+Wireless communication between a microcontroller and a cloud platform.
+
+Remote motor control using a smartphone application.
+
+The operation of stepper motors and their precise positioning capabilities.
+
+The role of motor driver circuits such as the ULN2003.
+
+Integration of hardware, software, and cloud services in an IoT system.
+
+Such systems are widely used in industrial automation, robotics, smart manufacturing,
+ automated doors, conveyor systems, and home automation projects.
+
+4. Conclusion
+
+The experiment successfully demonstrated the remote control of a stepper motor
+using an Arduino MKR WiFi 1010, a ULN2003 motor driver, and the Blynk IoT platform.
+
+ By pressing buttons on the Blynk application, the user could rotate the motor
+  clockwise or counter-clockwise through commands sent over the internet.
+
+   The project provided practical experience in IoT communication, motor control,
+    and cloud-based automation. Overall, it showed how connected devices can be
+     controlled remotely, forming the basis for more advanced smart automation and
+      robotics applications.

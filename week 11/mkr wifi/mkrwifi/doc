@@ -1,0 +1,95 @@
+Experiment Title
+
+Controlling the Built-in LED of Arduino MKR WiFi 1010 Using the Blynk App Slider
+
+1. Components Used
+1. Arduino MKR WiFi 1010
+
+The Arduino MKR WiFi 1010 is a microcontroller board with built-in
+Wi-Fi connectivity. It allows the board to connect to wireless networks and communicate with
+cloud platforms such as Blynk.
+
+In this experiment, it receives commands from the Blynk application and controls
+the brightness of the built-in LED.
+
+2. Built-in LED
+
+The built-in LED is an LED already integrated on the MKR WiFi 1010 board.
+It is used as an output device to visually indicate the changes in brightness
+according to the slider value sent from the Blynk app.
+
+3. Blynk IoT Application
+
+Blynk is a cloud-based IoT platform that enables users to remotely monitor and
+control devices through a smartphone application. In this project, a slider widget
+in the Blynk app sends values to the MKR WiFi 1010 over the internet.
+
+4. Wi-Fi Network
+
+A Wi-Fi connection is required for communication between the MKR WiFi 1010
+and the Blynk cloud server. The board connects to the network using the SSID and
+password provided in the code.
+
+5. WiFiNINA Library
+
+The WiFiNINA library allows the MKR WiFi 1010 to connect to Wi-Fi networks and
+manage wireless communication.
+
+6. BlynkSimpleWiFiNINA Library
+
+This library integrates the MKR WiFi 1010 with the Blynk platform.
+It handles communication between the microcontroller and the Blynk cloud server.
+
+7. Slider Widget (Virtual Pin V0)
+
+The slider widget in the Blynk application is linked to Virtual Pin V0.
+ It sends a numerical value (0–255) to the microcontroller, which is then used
+ to adjust the LED brightness.
+
+2. What the Experiment Did
+
+The experiment demonstrated remote control of the built-in LED on an Arduino
+MKR WiFi 1010 using the Blynk IoT platform.
+
+The MKR WiFi 1010 first connected to a Wi-Fi network and then established
+communication with the Blynk cloud using an authentication token. A slider widget
+on the Blynk mobile application was configured on Virtual Pin V0. Whenever the slider position changed, the Blynk app sent a value to the microcontroller.
+
+The function BLYNK_WRITE(V0) received the slider value and converted it into an
+integer. The analogWrite() function then used this value to control the brightness
+ of the LED through Pulse Width Modulation (PWM). A lower value resulted in a
+ dimmer LED, while a higher value increased the brightness.
+The current value was also displayed on the Serial Monitor for monitoring purposes.
+
+3. Importance of the Experiment
+
+This experiment is important because it introduces the fundamental concepts of
+the Internet of Things (IoT), where physical devices can be controlled remotely
+through the internet.
+
+Key learning outcomes include:
+
+Understanding how a microcontroller connects to a Wi-Fi network.
+
+Learning how cloud platforms such as Blynk enable remote device control.
+
+Using virtual pins to exchange data between a mobile application and a
+microcontroller.
+
+Implementing PWM control to vary LED brightness.
+
+Gaining practical experience in IoT application development.
+
+The concepts demonstrated in this experiment can be extended to control other
+ devices such as smart lights, fans, motors, sensors, and home automation systems.
+
+4. Conclusion
+
+The experiment successfully demonstrated the remote control of the built-in LED
+on the Arduino MKR WiFi 1010 using the Blynk mobile application.
+By moving a slider widget in the app, different brightness levels were sent through
+the Blynk cloud and applied to the LED using PWM. The project provided hands-on
+experience with Wi-Fi communication, cloud connectivity, and IoT-based device
+control. Overall, the experiment highlighted how IoT technologies can be used to
+ monitor and control electronic devices conveniently from anywhere with an internet
+  connection.

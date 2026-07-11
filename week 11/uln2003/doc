@@ -1,0 +1,99 @@
+Experiment Title
+
+Controlling a Stepper Motor Using Arduino and ULN2003 Driver
+
+Components Used
+
+1. Arduino Board
+
+The Arduino is the main microcontroller used to control the stepper motor.
+ It executes the program instructions and sends control signals to the motor driver
+  to rotate the motor in the desired direction.
+
+2. 28BYJ-48 Stepper Motor
+
+The 28BYJ-48 is a unipolar stepper motor that rotates in small, precise steps.
+ It is commonly used in automation and positioning applications where accurate
+  movement is required. In this experiment, the motor completes one full revolution
+   in both clockwise and anticlockwise directions.
+
+3. ULN2003 Motor Driver Module
+
+The ULN2003 motor driver acts as an interface between the Arduino and the stepper
+ motor. Since the Arduino cannot provide sufficient current to drive the motor
+  directly, the ULN2003 amplifies the control signals and supplies the required
+   current to the motor coils.
+
+4. Stepper Library
+
+The Arduino Stepper library simplifies the control of stepper motors. It provides
+ functions for setting motor speed and defining the number of steps the motor should
+  rotate.
+
+5. Connecting Wires
+
+Jumper wires are used to establish connections between the Arduino board and the
+ ULN2003 driver module.
+
+6. Power Supply
+
+The motor and Arduino are powered through a suitable power source to ensure stable
+ operation during motor rotation.
+
+What the Experiment Did
+
+The experiment demonstrated the operation and control of a stepper motor using an
+ Arduino and a ULN2003 driver module.
+
+First, the stepper motor was configured with 2048 steps per revolution, meaning
+ the motor requires 2048 steps to complete one full rotation. The motor speed was
+  set to 10 RPM using the setSpeed() function.
+
+In the program loop:
+
+The motor rotated 2048 steps clockwise, completing one full revolution.
+The motor paused for 3 seconds.
+The motor then rotated 2048 steps anticlockwise, returning to its original position.
+Another 3-second delay was applied before repeating the cycle.
+
+This continuous process allowed observation of motor movement in both directions.
+
+Importance of the Experiment
+
+This experiment is important because it introduces the fundamentals of stepper motor
+ control and motion systems.
+
+The experiment helps in understanding:
+
+How stepper motors operate using precise step movements.
+
+The role of motor driver circuits in supplying sufficient current to motors.
+
+Control of rotational direction using programming.
+
+Speed control using the Stepper library.
+
+Applications of stepper motors in automation and robotics.
+
+Stepper motors are extensively used in:
+
+CNC machines
+3D printers
+Robotic systems
+Automated manufacturing equipment
+Camera positioning systems
+Industrial control systems
+
+The knowledge gained from this experiment forms the foundation for more advanced
+ motor control and automation projects.
+
+4. Conclusion
+
+The experiment successfully demonstrated the control of a 28BYJ-48 stepper motor
+ using an Arduino and a ULN2003 motor driver. The motor completed one full
+  revolution clockwise, paused, and then completed one full revolution
+   anticlockwise in a continuous cycle. The activity provided practical experience
+    in motor control, direction control, and speed adjustment. Overall, the
+     experiment highlighted the importance of stepper motors in applications
+      requiring accurate and repeatable positioning, making them essential
+       components in modern automation and robotics systems.

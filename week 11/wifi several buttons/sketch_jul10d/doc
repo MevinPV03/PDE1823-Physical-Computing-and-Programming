@@ -1,0 +1,131 @@
+Experiment Title
+
+Advanced Remote Control of a Stepper Motor Using Arduino MKR WiFi 1010,
+ ULN2003 Driver, and Blynk IoT
+
+Components Used
+
+1. Arduino MKR WiFi 1010
+
+The Arduino MKR WiFi 1010 is a microcontroller board with built-in Wi-Fi
+ connectivity. It acts as the central controller, receiving commands from the
+  Blynk application and controlling the stepper motor's movement and speed.
+
+2. 28BYJ-48 Stepper Motor
+
+The 28BYJ-48 is a stepper motor capable of precise rotational movement. Unlike a
+ DC motor, it moves in fixed steps, allowing accurate control of position and
+  rotation angle. In this experiment, it rotates by different step values based
+   on user commands from the Blynk app.
+
+3. ULN2003 Motor Driver Module
+
+The ULN2003 driver serves as an interface between the Arduino and the stepper motor.
+ It supplies the required current to the motor and protects the microcontroller
+  from excessive current draw.
+
+4. Blynk IoT Application
+
+Blynk is a cloud-based IoT platform that enables remote control of electronic
+ devices through a smartphone. Multiple buttons and a slider were used in this
+  experiment to control the motor's rotation and speed.
+
+5. Wi-Fi Network
+
+The Wi-Fi network connects the MKR WiFi 1010 to the internet, allowing
+ communication with the Blynk cloud server and remote operation of the motor.
+
+6. WiFiNINA Library
+
+This library enables the MKR WiFi 1010 to connect to Wi-Fi networks and maintain
+ internet communication.
+
+7. BlynkSimpleWiFiNINA Library
+
+This library handles communication between the Arduino board and the Blynk IoT
+ platform.
+
+8. Stepper Library
+
+The Stepper library provides functions for controlling the motor's rotational
+ speed and movement in steps.
+
+9. Blynk Widgets
+
+The following widgets were used:
+
+V0 Button: Rotate motor 100 steps clockwise.
+V1 Button: Rotate motor 100 steps counter-clockwise.
+V2 Button: Rotate motor 512 steps clockwise (approximately 90°).
+V3 Button: Rotate motor 1024 steps clockwise (approximately 180°).
+V4 Button: Rotate motor 2048 steps clockwise (one full revolution).
+V5 Slider: Adjust motor speed dynamically.
+
+What the Experiment Did
+
+This experiment demonstrated advanced remote control of a stepper motor using
+ the Blynk IoT platform.
+
+The Arduino MKR WiFi 1010 connected to a Wi-Fi network and established
+ communication with the Blynk cloud using an authentication token.
+  Through the Blynk mobile application, users could remotely command the
+   stepper motor using several buttons and a speed control slider.
+
+The buttons performed different motor movements:
+
+Pressing V0 rotated the motor 100 steps clockwise.
+Pressing V1 rotated the motor 100 steps counter-clockwise.
+Pressing V2 rotated the motor 512 steps, approximately a quarter turn.
+Pressing V3 rotated the motor 1024 steps, approximately a half turn.
+Pressing V4 rotated the motor 2048 steps, which corresponds to one complete
+ revolution.
+
+The V5 slider allowed the user to change the motor speed in real time.
+ Whenever the slider value changed, the motor speed was updated using the
+  setSpeed() function, and the selected speed was displayed on the Serial Monitor.
+
+This setup enabled precise control of both the motor's position and rotational
+ speed from a smartphone.
+
+Importance of the Experiment
+
+This experiment is important because it combines IoT technology with motion
+ control systems, demonstrating how smart devices can remotely manage mechanical
+  movement.
+
+The experiment helped in understanding:
+
+IoT-based remote control using Blynk.
+
+Wireless communication between a mobile application and a microcontroller.
+
+Stepper motor operation and positioning control.
+
+Real-time speed adjustment of motors.
+
+Integration of sensors, actuators, microcontrollers, and cloud platforms.
+
+Such technologies are commonly used in:
+
+Industrial automation
+Smart manufacturing systems
+Robotic arms
+CNC machines
+Automated doors and gates
+Smart home systems
+Camera positioning systems
+
+The ability to control motor position and speed remotely is a key requirement in
+ many modern automation applications.
+
+4. Conclusion
+
+The experiment successfully demonstrated remote control of a 28BYJ-48 stepper
+ motor using an Arduino MKR WiFi 1010, ULN2003 motor driver, and the Blynk IoT
+  platform. Different Blynk buttons were used to rotate the motor by specific
+   step amounts, while a slider allowed real-time speed control. The project
+    provided practical experience in IoT communication, cloud-based device
+     management, motor control, and automation. Overall, the experiment
+      showed how internet-connected systems can provide precise and
+      flexible control of mechanical devices, forming the foundation
+       for advanced smart automation and robotics applications.
