@@ -1,0 +1,211 @@
+SOB 23: Produce a System of Two Devices That Communicate Wirelessly/
+ Communicate Data Between Devices
+
+Hardware
+
+Arduino Uno (Microcontroller)
+LDR Sensor
+Ultrasonic Distance Sensor
+Breadboard and jumper wires
+
+Software
+
+Arduino IDE
+Python
+PyCharm
+PySerial
+CSV Module
+Datetime Module
+Matplotlib
+
+Files Submitted
+
+Arduino sensor acquisition program
+Python data logging program
+Python data visualization program
+Generated CSV data file
+Graph showing live sensor readings
+Video demonstration
+Project Overview
+
+This project extends the IoT system developed in SOB 22.
+
+The Arduino continuously reads data from two sensors:
+
+LDR Sensor (light intensity)
+Ultrasonic Sensor (distance)
+
+The measurements are transmitted from the Arduino to Python through serial
+ communication. The Python application then:
+
+Receives incoming sensor data.
+Organizes the data into variables.
+Adds timestamps.
+Logs the information into a CSV file.
+Displays the data on screen.
+Produces a live graph showing sensor activity.
+
+This creates a complete monitoring system capable of collecting, storing,
+ and visualizing environmental data.
+
+Arduino Program
+
+The Arduino performs the following tasks:
+
+LDR Reading
+int ldrValue = analogRead(ldrPin);
+
+
+The LDR measures the surrounding light level.
+
+Ultrasonic Distance Reading
+float distance = duration * 0.0343 / 2.0;
+
+
+The ultrasonic sensor calculates the distance between itself and nearby objects.
+
+Data Transmission
+Serial.print(ldrValue);
+Serial.print(",");
+Serial.println(distance);
+
+
+The Arduino sends both values in a comma-separated format such as:
+
+118,56.23
+
+
+This format allows Python to split and process the data easily.
+
+Python Data Logging Program
+
+The first Python script receives data and stores it permanently.
+
+Imported Modules
+import serial
+import csv
+import time
+from datetime import datetime
+
+Features Implemented
+
+Receives live sensor data
+Splits incoming values
+Stores readings into variables
+
+ldr = int(values[0])
+distance = float(values[1])
+
+Generates timestamps
+timestamp = datetime.now()
+
+Saves information into CSV format
+writer.writerow([
+    timestamp,
+    ldr,
+    distance
+])
+
+Example Logged Data
+2026-07-15 12:01:14.409657,131,10.26
+2026-07-15 12:01:15.418125,121,56.27
+2026-07-15 12:01:16.426963,121,56.65
+
+
+Each row contains:
+
+Date and time
+LDR measurement
+Distance measurement
+
+This satisfies the requirement of logging all incoming data together with timestamps.
+
+Python Visualization Program
+
+The second Python script visualizes the incoming sensor data.
+
+Imported Modules
+import matplotlib.pyplot as plt
+
+Features Implemented
+
+Receives live sensor measurements
+Stores values inside lists
+
+ldr_values = []
+distance_values = []
+reading_numbers = []
+
+Continuously updates a graph
+
+plt.plot(reading_numbers,
+         ldr_values,
+         label="LDR")
+
+plt.plot(reading_numbers,
+         distance_values,
+         label="Distance")
+
+Labels the graph correctly
+
+plt.xlabel("Reading Number")
+plt.ylabel("Sensor Value")
+plt.title("Live Sensor Data")
+
+Graph Analysis
+
+The submitted graph clearly shows two live data streams:
+
+Blue Line (LDR)
+
+Represents the light sensor readings.
+
+The graph shows relatively stable values with occasional peaks,
+ indicating changes in lighting conditions.
+
+Red Line (Distance)
+
+Represents the ultrasonic sensor measurements.
+
+Large fluctuations are visible when objects moved closer or farther
+ from the sensor.
+
+Several very high values (around 1190 cm) appear, which likely correspond
+ to moments where the ultrasonic sensor did not receive a valid echo and
+  returned a maximum-distance measurement.
+
+Practical Demonstration
+
+The accompanying video demonstrated the full system operating correctly.
+
+LDR Test
+
+When the LDR sensor was covered:
+
+Light intensity changed.
+Sensor readings increased.
+Python received the new values immediately.
+The graph updated accordingly.
+Ultrasonic Sensor Test
+
+When a hand was moved in front of the sensor:
+
+Distance readings decreased.
+The graph showed immediate changes.
+The CSV file logged the new measurements.
+
+This confirms successful real-time data acquisition, transmission, storage,
+ and visualization.
+
+
+Explanation
+
+This project expands upon SOB 22 by implementing data logging and visualization.
+ Sensor readings from an LDR and ultrasonic sensor are transmitted from an
+  Arduino Uno to Python through serial communication. The Python application
+   timestamps each measurement, stores the data in a CSV file, and visualizes
+    the readings in a live graph using Matplotlib. Testing demonstrated that
+     covering the LDR altered light readings and moving an object closer to
+      the ultrasonic sensor reduced distance readings. The graph and CSV logs
+       confirm successful real-time acquisition, storage, and visualization of
+        sensor data.

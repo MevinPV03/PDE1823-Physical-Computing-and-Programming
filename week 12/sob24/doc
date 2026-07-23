@@ -1,0 +1,253 @@
+SOB 24: Produce a System of Multiple Devices that Communicate Wirelessly
+
+Hardware
+
+Arduino Uno
+LDR Sensor
+Ultrasonic Distance Sensor
+Breadboard and connecting wires
+
+Software
+
+Arduino IDE
+Python
+PyCharm
+Blynk Cloud Platform
+Blynk API Library
+Serial Communication
+
+Cloud Services
+
+Blynk IoT Dashboard
+Blynk Virtual Pins (V0 and V1)
+
+Project Overview
+
+This project extends the IoT system developed in SOB 22 and SOB 23 by
+ connecting the physical sensors to an Internet-based cloud platform.
+
+The Arduino Uno reads data from:
+
+An LDR sensor measuring light intensity.
+An ultrasonic sensor measuring distance.
+
+The sensor values are transmitted to a Python application through serial
+ communication. The Python script then processes the data and publishes the
+  latest sensor readings to the Blynk cloud platform using the Blynk API.
+
+This allows the sensor data to be monitored remotely using an online dashboard,
+ effectively transforming the project into a complete Internet of Things (IoT) system.
+
+System Architecture
+
+LDR Sensor
+      \
+       \
+        Arduino Uno
+       /
+Ultrasonic Sensor
+
+        |
+        | Serial Communication
+        v
+
+      Python Script
+
+        |
+        | Blynk API
+        v
+
+    Blynk Cloud
+
+        |
+        v
+
+ Blynk Dashboard
+
+Arduino Program
+
+The Arduino performs two primary tasks:
+
+Read LDR Sensor
+int lightValue = analogRead(LDR_PIN);
+
+
+This collects the current light intensity level.
+
+Read Ultrasonic Sensor
+float distance = duration * 0.034 / 2;
+
+
+This calculates the distance between the sensor and nearby objects.
+
+Send Data to Python
+Serial.print("LDR:");
+Serial.print(lightValue);
+
+Serial.print(",Distance:");
+Serial.println(distance);
+
+
+The Arduino continuously sends sensor data through the serial connection.
+
+Python Program
+
+The Python application acts as the bridge between the Arduino and the cloud.
+
+Imported Libraries
+import serial
+import time
+import BlynkLib
+
+Establish Arduino Connection
+arduino = serial.Serial(
+    port="COM3",
+    baudrate=9600,
+    timeout=1
+)
+
+
+Python continuously listens for incoming Arduino sensor data.
+
+Establish Blynk Connection
+blynk = BlynkLib.Blynk(BLYNK_AUTH)
+
+
+The Blynk authentication token connects the application to the online Blynk
+ cloud platform.
+
+Receiving and Processing Data
+
+Python receives incoming measurements:
+
+data = arduino.readline().decode().strip()
+
+
+The values are separated and stored:
+
+ldr_value = int(values[0])
+distance_value = float(values[1])
+
+
+This ensures the data is correctly interpreted before being uploaded.
+
+Publishing Data to Blynk
+
+LDR Sensor
+blynk.virtual_write(
+    0,
+    ldr_value
+)
+
+
+Published on:
+
+Virtual Pin V0
+
+Ultrasonic Sensor
+
+blynk.virtual_write(
+    1,
+    distance_value
+)
+
+
+Published on:
+
+Virtual Pin V1
+
+Blynk Dashboard Configuration
+
+According to the dashboard screenshot:
+
+Widget 1
+
+LDR Value Gauge
+
+Virtual Pin: V0
+Range: 0 - 1023
+
+
+Displays real-time light readings from the LDR sensor.
+
+Widget 2
+
+Distance Gauge
+
+Virtual Pin: V1
+Range: 0 - 400
+
+
+Displays real-time distance measurements from the ultrasonic sensor.
+
+Widget 3
+
+Live Data Chart
+
+The chart visualizes:
+
+LDR readings over time
+Distance readings over time
+
+allowing sensor activity to be monitored remotely through the cloud.
+
+Example Analysis of Dashboard
+
+LDR Gauge
+
+Current reading approximately: 436
+
+This indicates the LDR is detecting a moderate light level.
+
+Distance Gauge
+
+Current reading approximately: 9.23
+
+This indicates that an object was positioned very close to the ultrasonic sensor
+ during testing.
+
+Real-Time Graph
+
+The graph displays continuous updates from both sensors.
+
+The spikes visible in the graph correspond to environmental changes such as:
+
+Covering or uncovering the LDR sensor.
+Moving a hand closer to or farther from the ultrasonic sensor.
+
+This confirms successful cloud-based monitoring and visualization.
+
+Practical Demonstration
+
+A classroom demonstration was performed.
+
+Ultrasonic Sensor Test
+
+When a hand was moved in front of the ultrasonic sensor:
+
+Distance values decreased.
+The Blynk dashboard updated immediately.
+The graph reflected the change in real time.
+
+LDR Sensor Test
+
+When the LDR sensor was covered:
+
+Light readings changed significantly.
+New values appeared on the dashboard gauges.
+The graph updated automatically.
+
+This demonstrated successful acquisition, transmission, cloud publishing,
+ and visualization of sensor data.
+
+Explanation
+
+This project extends the IoT solution developed in SOB 22 and SOB 23 by
+ integrating the Blynk cloud platform. Data collected from an LDR sensor
+  and an ultrasonic sensor is transmitted from the Arduino Uno to a Python
+   application through serial communication. Python processes the readings
+    and uses the Blynk API to publish the latest values to virtual pins V0 and V1.
+     The Blynk dashboard displays the sensor readings using gauges and a
+     live graph, allowing remote monitoring of environmental data.
+      Testing confirmed that changes in light intensity and distance measurements
+       were reflected instantly on the online dashboard.

@@ -1,0 +1,102 @@
+SOB 22: Write From Scratch a Small to Medium Sized Program for a Given Computing
+Application
+
+
+Hardware (Microcontroller)
+
+Arduino Uno
+LDR (Light Dependent Resistor) sensor
+Ultrasonic distance sensor
+Breadboard and jumper wires
+
+Software
+
+Arduino IDE
+Python
+PyCharm
+PySerial library
+Project Overview
+
+This project implements a small Internet of Things (IoT) system using an
+Arduino Uno and a Python application running on a computer.
+
+Two sensors were connected to the microcontroller:
+
+LDR Sensor – measures light intensity.
+Ultrasonic Sensor – measures the distance of nearby objects.
+
+The Arduino continuously reads data from both sensors and transmits the values
+ to a Python program through serial communication. The Python script receives
+ the data, stores it in variables, and displays the information on the console.
+
+How the System Works
+
+Arduino Side
+
+The Arduino reads:
+
+The LDR value using the analog input pin A0.
+The distance measured by the ultrasonic sensor using the Trigger and Echo pins.
+
+The readings are formatted as:
+LDR_Value,Distance
+
+Example:
+345,12.6
+
+The values are then sent to the computer through the serial connection every second.
+
+Python Side
+
+The Python script:
+
+Opens the serial connection.
+Reads incoming data from the Arduino.
+Splits the incoming string using the comma separator.
+Stores the values into variables:
+ldr_value
+distance
+Prints the results to the console.
+
+Example output:
+LDR Value: 345
+Distance: 12.6 cm
+-------------------
+
+Practical Demonstration
+
+A video recording was produced showing the system operating correctly.
+
+Ultrasonic Sensor Test
+
+When a hand was placed in front of the ultrasonic sensor:
+
+The measured distance decreased.
+The Python console displayed smaller distance values.
+
+Distance: 5.2 cm
+
+This confirmed that the ultrasonic sensor was correctly detecting nearby objects.
+
+LDR Sensor Test
+
+When the LDR sensor was covered:
+
+Less light reached the sensor.
+The analog reading increased to values above approximately 300.
+
+LDR Value: 320
+LDR Value: 415
+
+The updated values were immediately displayed on the Python console, confirming
+ successful communication between the Arduino and Python application.
+
+Reflection
+
+This project demonstrates physical computing and basic IoT principles.
+ The Arduino collects environmental data from an LDR sensor and an ultrasonic
+  distance sensor, then transmits the information to a Python application through
+   serial communication. The Python program successfully receives, processes,
+    stores, and displays the sensor data in real time. Testing confirmed
+     that covering the LDR increased the recorded light values and moving an
+      object closer to the ultrasonic sensor reduced the measured distance.
